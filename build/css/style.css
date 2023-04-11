@@ -540,7 +540,7 @@ h2 {
   position: relative;
 }
 .main-s {
-  background: url("../../img/bg_main.png") center center/cover no-repeat;
+  background: url("../img/bg_main.png") center center/cover no-repeat;
   min-height: 40.4375rem;
   padding: 0 0 34px;
 }
