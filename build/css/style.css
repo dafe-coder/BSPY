@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap");
 @font-face {
   font-family: SFProDisplay_900;
@@ -357,6 +358,82 @@ template {
   display: none;
 }
 
+/**
+ * Accordion v3.3.4
+ * Lightweight and accessible accordion module created in pure Javascript
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+.ac {
+  margin-top: 8px;
+  border: 1px solid #eee;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.ac .ac-header {
+  margin: 0;
+  padding: 0;
+}
+
+.ac .ac-trigger {
+  font: bold 16px "Arial", sans-serif;
+  color: #111;
+  text-align: left;
+  width: 100%;
+  padding: 8px 32px 8px 8px;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  transition: color 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+}
+
+.ac .ac-trigger::after {
+  content: "+";
+  text-align: center;
+  width: 15px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.ac .ac-trigger:focus {
+  color: #8a8a8a;
+}
+
+.ac .ac-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+
+.ac .ac-panel .ac-text {
+  font: 15px/24px "Arial", sans-serif;
+  color: #111;
+  padding: 8px;
+  margin: 0;
+}
+
+.ac.js-enabled .ac-panel {
+  visibility: hidden;
+}
+
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
+
+.ac.is-active > .ac-header .ac-trigger::after {
+  content: "–";
+}
+
 html {
   font-size: 1.32vw;
   height: 100%;
@@ -437,6 +514,10 @@ section {
   flex-direction: column;
 }
 
+.bg-brown {
+  background-color: #1a0907;
+}
+
 .container {
   margin: 0 auto;
   max-width: 92.68vw;
@@ -470,6 +551,12 @@ h3 {
 .par {
   font-size: 1.32vw;
   line-height: 2.2vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+.par-sm {
+  font-size: 1.17vw;
+  line-height: 1.76vw;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -783,4 +870,170 @@ h3 {
   object-fit: cover;
   width: 100%;
   height: 16.84vw;
+}
+
+.about-main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 3.66vw;
+}
+.about-main-s {
+  height: 22.69vw;
+  background: url("../img/bg_about.png") center center/cover no-repeat;
+}
+.about-main h1 {
+  color: #ffffff;
+}
+
+.about-s {
+  padding: 2.56vw 0 7.32vw;
+}
+.about-info-address {
+  width: 100%;
+  padding: 1.46vw;
+  border: 1px solid #0060ac;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-info-address p {
+  font-weight: 700;
+  color: #0060ac;
+}
+.about-block {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 3.66vw;
+  margin-top: 2.56vw;
+}
+.about-block__left .ac {
+  margin-top: 0;
+  border: none;
+  border-bottom: 1px solid #170807;
+}
+.about-block__left .ac .ac-trigger:focus {
+  color: #170807;
+}
+.about-block__left .ac .ac-trigger::after {
+  width: 1.1vw;
+  right: 0;
+}
+.about-block__left .ac.is-active {
+  padding-bottom: 1.46vw;
+}
+.about-block__left .ac-panel > *:not(:last-child) {
+  margin-bottom: 1.46vw;
+}
+.about-block__left .ac-header button {
+  border: none;
+  padding: 1.46vw 0;
+  font-family: "Lora", serif;
+  font-size: 1.76vw;
+  line-height: 2.64vw;
+}
+.about-block__right img {
+  width: 100%;
+  height: 43.92vw;
+  object-fit: cover;
+}
+
+.achievement {
+  color: #ffffff;
+}
+.achievement-s {
+  padding: 7.32vw 0;
+  position: relative;
+  overflow-y: hidden;
+}
+.achievement h2 {
+  text-align: center;
+}
+.achievement-block {
+  margin: 3.66vw 0 0;
+}
+.achievement-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.56vw;
+}
+.achievement-block ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.73vw;
+  align-items: center;
+}
+.achievement-block ul li span:first-child {
+  font-size: 2.93vw;
+  line-height: 3.66vw;
+  font-weight: 700;
+}
+.achievement-block ul li span:last-child {
+  font-size: 1.76vw;
+  line-height: 2.64vw;
+  font-family: "Montserrat", sans-serif;
+}
+.achievement-block a {
+  margin-top: 3.66vw;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.46vw;
+  color: #ffffff;
+}
+.achievement-block a svg {
+  height: 3.66vw;
+  width: 3.66vw;
+  transform: rotate(90deg);
+}
+.achievement-block a span {
+  font-size: 1.17vw;
+  line-height: 1.76vw;
+}
+.achievement-img img {
+  position: absolute;
+}
+.achievement-img img:first-child {
+  width: 21.52vw;
+  height: 15.52vw;
+  left: 8.78vw;
+  top: 16.11vw;
+  object-fit: cover;
+}
+.achievement-img img:nth-child(2) {
+  width: 20.57vw;
+  height: 14.2vw;
+  right: 0.81vw;
+  top: 15.67vw;
+  object-fit: cover;
+}
+.achievement-img img:nth-child(3) {
+  width: 22.11vw;
+  height: 14.42vw;
+  top: 37.92vw;
+  left: 0;
+  object-fit: cover;
+}
+.achievement-img img:nth-child(4) {
+  width: 19.11vw;
+  height: 14.64vw;
+  top: 37.12vw;
+  right: 0;
+  object-fit: cover;
+}
+.achievement-img img:nth-child(5) {
+  width: 20.5vw;
+  height: 14.06vw;
+  left: 8.35vw;
+  top: 60.18vw;
+  object-fit: cover;
+}
+.achievement-img img:nth-child(6) {
+  width: 15.45vw;
+  height: 15.96vw;
+  top: 57.98vw;
+  right: 11.05vw;
+  object-fit: cover;
 }
